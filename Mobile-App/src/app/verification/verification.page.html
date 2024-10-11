@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button text="" mode="md" icon="arrow-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+    <div class="header_text">
+        <h1>{{"verification" | translate}}</h1>
+        <h2 innerHTML="{{'enter_verification_code_sent_on_given_number' | translate}}"></h2>
+    </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none" class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <ion-label mode="md">{{"enter_6_digit_otp" | translate}}</ion-label>
+                    <div class="input_box">
+                        <ion-input type="text" [(ngModel)]="code" class="ion-text-center" value="" placeholder="------"></ion-input>
+                    </div>
+                </div>
+            </ion-item>
+
+            <ion-button mode="md" fill="solid" shape="block" class="btn animate__animated animate__fadeInUp" (click)="submit()">
+                {{'submit' | translate}}
+            </ion-button>
+
+            <h3 class="d-flex animate__animated animate__fadeInUp">
+                <cd-timer [countdown]="true" [startTime]="300" format="ms"></cd-timer>&nbsp; min left
+                <span (click)="sendOtp()" class="end">{{'resend' | translate}}</span>
+            </h3>
+        </ion-list>
+    </div>
+</ion-content>

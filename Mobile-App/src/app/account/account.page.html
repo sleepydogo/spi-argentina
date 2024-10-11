@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> {{"account" | translate}} </ion-title>
+  </ion-toolbar>
+
+  <div
+    class="profileInfo d-flex animate__animated animate__fadeInUp"
+    (click)="myProfile()"
+  >
+    <div class="text_box">
+      <h3>{{ profileInfo?.first_name }}  {{ profileInfo?.last_name }} </h3>
+      <h4>{{ profileInfo?.phone_number }}</h4>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+  <div class="form">
+    <ion-list lines="none">
+      <ion-item
+        lines="none"
+        class="animate__animated animate__fadeInUp"
+        (click)="myRides()"
+      >
+        <div class="item_inner">
+          <div class="input_box d-flex">
+            <div class="icon_box">
+              <ion-icon class="zmdi zmdi-fire"></ion-icon>
+            </div>
+            <div class="text_box">
+              <h3>{{"rides" | translate}}</h3>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        lines="none"
+        class="animate__animated animate__fadeInUp"
+        (click)="selectLanguage()"
+      >
+        <div class="item_inner">
+          <div class="input_box d-flex">
+            <div class="icon_box">
+              <ion-icon class="zmdi zmdi-globe"></ion-icon>
+            </div>
+            <div class="text_box">
+              <h3>{{"change_language" | translate}}</h3>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item
+        lines="none"
+        class="animate__animated animate__fadeInUp"
+        (click)="getSupport()"
+      >
+        <div class="item_inner">
+          <div class="input_box d-flex">
+            <div class="icon_box">
+              <ion-icon class="zmdi zmdi-email"></ion-icon>
+            </div>
+            <div class="text_box">
+              <h3>{{"support" | translate}}</h3>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item
+        lines="none"
+        class="animate__animated animate__fadeInUp"
+        (click)="faqs()"
+      >
+        <div class="item_inner">
+          <div class="input_box d-flex">
+            <div class="icon_box">
+              <ion-icon class="zmdi zmdi-help"></ion-icon>
+            </div>
+            <div class="text_box">
+              <h3>{{"faqs" | translate}}</h3>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="animate__animated animate__fadeInUp" (click)="eliminarCuenta()">
+        <div class="item_inner">
+          <div class="input_box d-flex">
+            <div class="icon_box">
+              <ion-icon class="zmdi zmdi-close"></ion-icon>
+            </div>
+            <div class="text_box">
+              <h3 color="red">Eliminar cuenta</h3>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item
+        lines="none"
+        class="animate__animated animate__fadeInUp"
+        (click)="logout()"
+      >
+        <div class="item_inner">
+          <div class="input_box d-flex">
+            <div class="icon_box">
+              <ion-icon class="zmdi zmdi-open-in-browser"></ion-icon>
+            </div>
+            <div class="text_box">
+              <h3>{{"logout" | translate}}</h3>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

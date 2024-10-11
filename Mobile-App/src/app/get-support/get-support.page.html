@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button text="" mode="md" icon="arrow-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+    <div class="header_text">
+        <h1>{{"get_support" | translate}}</h1>
+        <h2>{{"ask_us_or_suggest_anyway_we_can_improve" | translate}}</h2>
+    </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+
+    <div class="content_bg"></div>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none" class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <ion-label mode="md">{{"enter_your_message" | translate}}</ion-label>
+                    <div class="input_box">
+                        <ion-textarea rows="3" auto-grow="true" mode="md" type="text"
+                            placeholder="{{'write_something' | translate}}..."></ion-textarea>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="large" shape="block" fill="solid" mode="md" class="btn animate__animated animate__fadeInUp">
+            {{'submit_message' | translate}}</ion-button>
+    </div>
+
+</ion-content>

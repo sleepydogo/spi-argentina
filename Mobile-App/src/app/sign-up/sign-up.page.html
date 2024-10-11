@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons mode="md" slot="start">
+      <ion-back-button
+        text=""
+        mode="md"
+        icon="arrow-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <div class="header_text">
+    <h1>{{"sign_up_now" | translate}}</h1>
+    <h2>{{"you_are_not_registered_yet" | translate}}</h2>
+  </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+  <div class="form">
+    <ion-list lines="none">
+      <!-- <div class="image_container">
+        <div class="img_box center_img">
+          <img src="assets/images/profile_placeholder.png" class="crop_img" />
+        </div>
+        <ion-icon class="zmdi zmdi-camera"></ion-icon>
+      </div> -->
+
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner">
+          <ion-label mode="md">{{"first_name" | translate}}</ion-label>
+          <div class="input_box">
+            <ion-input
+              type="name"
+              [(ngModel)]="postData.first_name"
+              placeholder="{{'enter_first_name' | translate}}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner">
+          <ion-label mode="md">{{"last_name" | translate}}</ion-label>
+          <div class="input_box">
+            <ion-input
+              type="name"
+              [(ngModel)]="postData.last_name"
+              placeholder="{{'enter_last_name' | translate}}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner">
+            <ion-label mode="md">{{"phone_number" | translate}} *</ion-label>
+            <div class="input_box">
+                <ion-select style="width: 36%;" [(ngModel)]="selectedCountry" interface="popover">
+                    <ion-select-option *ngFor="let country of countries" [value]="country">
+                        {{country.code}} ({{country.dialCode}})
+                    </ion-select-option>
+                </ion-select>
+                <ion-input style="margin-left: 10px;" [(ngModel)]="postData.phone_number" type="tel"
+                    placeholder="Ingrese su teléfono"></ion-input>
+            </div>
+        </div>
+    </ion-item>
+
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner">
+          <ion-label mode="md">{{"email_address" | translate}}</ion-label>
+          <div class="input_box">
+            <ion-input
+              type="email"
+              [(ngModel)]="postData.email"
+              placeholder="{{'enter_email_address' | translate}}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item>
+
+      <!-- <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner">
+          <ion-label mode="md">{{"password" | translate}}</ion-label>
+          <div class="input_box">
+            <ion-input
+              type="password"
+              [(ngModel)]="postData.password1"
+              placeholder="{{'enter_your_password' | translate}}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item> -->
+
+      <ion-item class="item-select" lines="none">
+        <div class="item_inner">
+          <ion-label mode="md">{{"password" | translate}}</ion-label>
+          <div class="input_box d-flex">
+            <ion-input [type]="passwordType" [(ngModel)]="postData.password1" class="ion-text-start"
+              placeholder="{{ 'enter_your_password' | translate }}"></ion-input>
+            <ion-icon [name]="passwordIcon" slot="end" (click)="togglePasswordVisibility()"
+              class="password-toggle-icon"></ion-icon>
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item class="item-select" lines="none">
+        <div class="item_inner">
+          <ion-label mode="md">{{"repeat_password" | translate}}</ion-label>
+          <div class="input_box d-flex">
+            <ion-input [type]="passwordType2" [(ngModel)]="postData.password2" class="ion-text-start"
+              placeholder="{{ 'enter_your_password' | translate }}"></ion-input>
+            <ion-icon [name]="passwordIcon2" slot="end" (click)="togglePasswordVisibility2()"
+              class="password-toggle-icon"></ion-icon>
+          </div>
+        </div>
+      </ion-item>
+<!-- 
+      <ion-item lines="none" class="animate__animated animate__fadeInUp">
+        <div class="item_inner">
+          <ion-label mode="md">{{"repeat_password" | translate}}</ion-label>
+          <div class="input_box">
+            <ion-input
+              type="password"
+              [(ngModel)]="postData.password2"
+              placeholder="{{'enter_your_password_again' | translate}}"
+            ></ion-input>
+          </div>
+        </div>
+      </ion-item> -->
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-button
+    mode="md"
+    fill="solid"
+    shape="block"
+    class="btn animate__animated animate__fadeInUp"
+    (click)="continue()"
+  >
+    {{'continue' | translate}}
+  </ion-button>
+</ion-footer>

@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons mode="md" slot="start">
+      <ion-back-button
+        text=""
+        mode="md"
+        icon="arrow-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <div class="header_text">
+    <h1>{{"faqs" | translate}}</h1>
+  </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+  <div class="form">
+    <ion-list lines="none">
+      <ion-accordion-group>
+        <!-- Pregunta 1 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="1">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Cómo funciona la predicción de incendios?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              Utilizamos inteligencia artificial y datos satelitales para analizar variables climatológicas y predecir probabilidades de incendios en tiempo real, lo que permite enviar alertas geolocalizadas.
+            </p>
+          </div>
+        </ion-accordion>
+      
+        <!-- Pregunta 2 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="2">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Qué tipo de alertas recibiré?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              Recibirás alertas geolocalizadas en tiempo real sobre los riesgos de incendio en tu área. Las notificaciones se adaptarán a la ubicación donde te encuentres y el nivel de riesgo.
+            </p>
+          </div>
+        </ion-accordion>
+      
+        <!-- Pregunta 3 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="3">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Cómo pueden usar esta herramienta los agricultores?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              Los agricultores pueden usar nuestra aplicación para recibir datos precisos sobre los riesgos de incendio en sus tierras, permitiéndoles tomar decisiones informadas y proteger sus cultivos.
+            </p>
+          </div>
+        </ion-accordion>
+      
+        <!-- Pregunta 4 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="4">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Ofrecen servicios para aseguradoras?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              Sí, las aseguradoras pueden acceder a nuestra versión premium, que proporciona datos detallados y predicciones para ajustar pólizas basadas en riesgos de incendio específicos.
+            </p>
+          </div>
+        </ion-accordion>
+      
+        <!-- Pregunta 5 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="5">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Cómo puedo reportar un incendio?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              Puedes reportar un incendio directamente desde la aplicación seleccionando la opción de "Reportar Incendio" y proporcionando detalles sobre la ubicación y la gravedad del evento.
+            </p>
+          </div>
+        </ion-accordion>
+      
+        <!-- Pregunta 6 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="6">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Qué sucede si no recibo notificaciones?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              Asegúrate de haber permitido las notificaciones en la configuración de la aplicación y de tu dispositivo. Si el problema persiste, contacta a soporte para asistencia.
+            </p>
+          </div>
+        </ion-accordion>
+      
+        <!-- Pregunta 7 -->
+        <ion-accordion class="animate__animated animate__fadeInUp" value="7">
+          <ion-item lines="none" slot="header" icon="none">
+            <ion-label>¿Cómo puedo actualizar mi ubicación en la app?</ion-label>
+          </ion-item>
+          <div slot="content">
+            <p>
+              La aplicación actualiza tu ubicación automáticamente. Si deseas actualizarla manualmente, ve a la sección de configuración y selecciona "Actualizar ubicación".
+            </p>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+      
+    </ion-list>
+  </div>
+</ion-content>

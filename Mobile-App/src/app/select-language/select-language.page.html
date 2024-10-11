@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons mode="md" slot="start">
+            <ion-back-button text="" mode="md" defaultHref="sign-in" icon="arrow-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+    </ion-toolbar>
+    <div class="header_text">
+        <h1>{{"select_language" | translate}}</h1>
+    </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-radio-group [(ngModel)]="defaultLanguageCode">
+                <ion-radio class="animate__animated animate__fadeInUp d-flex"  justify="space-between" alignment="start" label-placement="fixed" *ngFor="let language of languages"
+                    value="{{language.code}}" (click)="onLanguageClick(language)">
+                    <h3>{{language.name}}</h3>
+                </ion-radio>
+            </ion-radio-group>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-button size="large" shape="block" fill="solid" mode="md" class="btn animate__animated animate__fadeInUp"
+        (click)="languageConfirm()">{{'confirm_language' | translate}}</ion-button>
+</ion-footer>

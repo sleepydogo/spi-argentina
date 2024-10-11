@@ -1,0 +1,38 @@
+ion-header .header_text {
+    min-height: fit-content;
+}
+
+.form {
+    padding-top: 40px;
+    .image_container {
+        width: fit-content;
+        position: relative;
+        margin-bottom: 25px;
+        .img_box {
+            min-width: 85px;
+            height: 85px;
+            border-radius: 50%;
+        }
+        ion-icon {
+            position: absolute;
+            right: -10px;
+            top: 0px;
+            background: var(--text-black);
+            color: var(--text-white);
+            text-align: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            line-height: 32px;
+            font-size: 1.05rem;
+        }
+    }
+}
+
+ion-input {
+    padding-left: 1%;
+}
+
+ion-footer {
+    padding: 25px;
+}

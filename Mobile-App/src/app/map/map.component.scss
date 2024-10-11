@@ -1,0 +1,10 @@
+#map {
+    width: 100%;
+    opacity: 0;
+  }
+  
+  .map {
+    z-index: 0;
+    height: 100%;
+    overflow: visible !important;  
+  }

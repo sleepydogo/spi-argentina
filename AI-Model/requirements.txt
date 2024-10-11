@@ -1,0 +1,8 @@
+jupyter-book
+matplotlib
+numpy
+cdsapi
+netCDF4
+torch
+skorch
+pandas

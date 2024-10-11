@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons mode="md" slot="start">
+      <ion-back-button
+        text=""
+        mode="md"
+        icon="arrow-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  <div class="header_text">
+    <h1>{{"profile" | translate}}</h1>
+    <h2>{{"everything_about_you" | translate}}</h2>
+  </div>
+</ion-header>
+
+<ion-content class="bg_white" fullscreen>
+  <div class="form">
+    <ion-list lines="none">
+      <ion-card>
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md">{{"phone_number" | translate}}</ion-label>
+            <div class="input_box">
+              <ion-input
+                type="text"
+                readonly
+                class="ion-text-start"
+                [(ngModel)]="phone_number"
+                placeholder="{{'enter_phone_number' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md">{{"first_name" | translate}}</ion-label>
+            <div class="input_box">
+              <ion-input
+                type="name"
+                readonly
+                [(ngModel)]="first_name"
+                placeholder="{{'enter_first_name' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md">{{"last_name" | translate}}</ion-label>
+            <div class="input_box">
+              <ion-input
+                type="name"
+                readonly
+                [(ngModel)]="last_name"
+                placeholder="{{'enter_last_name' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md">{{"email_address" | translate}}</ion-label>
+            <div class="input_box">
+              <ion-input
+                type="email"
+                readonly
+                [(ngModel)]="email"
+                placeholder="{{'enter_email_address' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md">{{"home_address" | translate}}</ion-label>
+            <div class="input_box">
+              <ion-input
+                type="text"
+                readonly
+                [(ngModel)]="address"
+                placeholder="{{'enter_your_address' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <h2 class="animate__animated animate__fadeInUp">
+          {{"emergency_contact" | translate}}
+        </h2>
+
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md"
+              >{{"emergency_contact_name" | translate}}</ion-label
+            >
+            <div class="input_box">
+              <ion-input
+                type="text"
+                readonly
+                [(ngModel)]="emergency_contact_name"
+                placeholder="{{'enter_an_emergency_contact_name' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item lines="none" class="animate__animated animate__fadeInUp">
+          <div class="item_inner">
+            <ion-label mode="md"
+              >{{"emergency_contact_phone" | translate}}</ion-label
+            >
+            <div class="input_box">
+              <ion-input
+                type="email"
+                readonly
+                [(ngModel)]="emergency_contact_phone"
+                placeholder="{{'enter_an_emergency_contact_phone' | translate}}"
+              ></ion-input>
+            </div>
+          </div>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <!-- <ion-button mode="md" fill="solid" shape="block" class="btn animate__animated animate__fadeInUp" (click)="save()">
+        {{'update' | translate}}
+    </ion-button> -->
+</ion-footer>
