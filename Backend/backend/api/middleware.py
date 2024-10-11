@@ -8,7 +8,7 @@ class Hide404Middleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        if response.status_code == 404 and not request.path.startswith('/not-found/') and not request.path.startswith('/share-trip/') and not request.path.startswith('/media/banners/'):
+        if response.status_code == 404:
             response.content = b'Not Found'
             response['Content-Type'] = 'text/plain'
 
