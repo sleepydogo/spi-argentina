@@ -223,13 +223,7 @@ class ModificarPerfilView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
-        usuario = request.user
-
-        if usuario.rol == 'Pasajero':
-            user = User.objects.get(username=usuario.username)
-        else:
-            user = Conductor.objects.get(username=usuario.username)
-        
+        user = User.objects.get(username=request.user.username)
         error = []
         # Verificar si el email esta en uso 
         if (request.data.get('email')):
@@ -263,12 +257,6 @@ class ModificarPerfilView(APIView):
         
         if (request.data.get('address')):
             user.address = request.data.get('address')
-        
-        if request.data.get('licencia_verso'):
-            user.licencia_de_conducir_verso = request.data.get('licencia_verso')
-        
-        if request.data.get('licencia_reverso'):
-            user.licencia_de_conducir_reverso = request.data.get('licencia_reverso')
 
         print(request.data)
         
@@ -289,36 +277,8 @@ class PerfilView(APIView):
             "last_name": user.last_name,
             "phone_number": user.phone_number,
         }
-        
-        if user.rol == 'Conductor':  # Asegúrate de que esta comparación sea correcta
-            conductor = Conductor.objects.filter(email=user.email).first()
-            auto = None  # Inicializar auto aquí
-            try:
-                auto = Vehiculo.objects.get(conductor_actual=conductor)
-            except Vehiculo.DoesNotExist:
-                auto = None  # No es necesario, ya está inicializado como None
-            except Exception as e:  # Captura cualquier otro tipo de excepción
-                print(f"Error al obtener el vehículo: {e}")  
-                
-            if conductor:
-                perfil_data.update({
-                    "address": conductor.address,
-                    "rating": str(conductor.rating),  # Convertir a string si es necesario para evitar problemas de serialización
-                    "emergency_contact_name": conductor.emergency_contact_name,
-                    "emergency_contact_phone": conductor.emergency_contact_phone,
-                    "profile_picture": conductor.profile_picture.url if conductor.profile_picture else None,
-                    "personal_id_front": conductor.personal_id_front.url if conductor.personal_id_front else None,
-                    "personal_id_back": conductor.personal_id_back.url if conductor.personal_id_back else None,
-                    "driver_license_front": conductor.driver_license_front.url if conductor.driver_license_front else None,
-                    "driver_license_back": conductor.driver_license_back.url if conductor.driver_license_back else None,
-                    "control_card_front": conductor.control_card_front.url if conductor.control_card_front else None,
-                    "control_card_back": conductor.control_card_back.url if conductor.control_card_back else None,
-                    "vehiculo_marca": auto.marca if auto else None,
-                    "vehiculo_modelo": auto.modelo if auto else None,
-                    "vehiculo_patente": auto.patente if auto else None,
-                })
-                
-        elif user.rol == 'Moderador' or user.rol == 'Administrador':
+           
+        elif user.rol == 'Administrador':
             # Si es Moderador o Administrador, puedes incluir los campos de User directamente
             perfil_data["username"] = user.username
             perfil_data["is_staff"] = user.is_staff
