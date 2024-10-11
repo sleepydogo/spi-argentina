@@ -10,8 +10,6 @@ class User(AbstractUser):
     # Already has username, first_name, last_name, email, password, is_staff, is_active, date_joined    
     class Role(models.TextChoices):
         ADMINISTRADOR = 'Administrador'
-        MODERADOR = 'Moderador'
-        CONDUCTOR = 'Conductor'
         PASAJERO = 'Pasajero'
     AbstractUser.username = None
     rol = models.CharField(max_length=13, choices=Role.choices, default=Role.PASAJERO)
@@ -44,10 +42,10 @@ class Horario(models.Model):
     
 
 class Contacto(models.Model):
-    telefono_transito = models.CharField(max_length=15, verbose_name="Teléfono Secretaria de transito")
-    telefono_policia = models.CharField(max_length=15, blank=True, null=True, verbose_name="Teléfono Policia metropolitana")
-    telefono_departamental = models.CharField(max_length=15, blank=True, null=True, verbose_name="Teléfono Secretaria departamental")
-    telefono_alcaldia = models.CharField(max_length=15, blank=True, null=True, verbose_name="Teléfono Alcaldia")
+    telefono_transito = models.CharField(max_length=15)
+    telefono_policia = models.CharField(max_length=15, blank=True, null=True)
+    telefono_departamental = models.CharField(max_length=15, blank=True, null=True)
+    telefono_alcaldia = models.CharField(max_length=15, blank=True, null=True)
 
     def __str__(self):
         return f"Contacto {self.id}"
